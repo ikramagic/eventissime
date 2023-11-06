@@ -22,7 +22,7 @@ event_descriptions = ["Une soirée hilarante avec des boucles infinies de code. 
 all_users = []
 all_events = []
 
-25.times do 
+5.times do 
     first_name = Faker::Name.first_name
     last_name = Faker::Name.last_name
 
@@ -35,7 +35,7 @@ all_events = []
     all_users << new_user
 end
 
-25.times do 
+5.times do 
         new_event = Event.create(
         start_date: Faker::Date.forward(days: 365),
         duration: event_durations.sample,
@@ -47,7 +47,7 @@ end
     all_events << new_event
 end
 
-50.times do 
+5.times do 
     Attendance.create(
         user: all_users.sample,
         event: all_events.sample
