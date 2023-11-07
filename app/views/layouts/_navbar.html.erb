@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="#">Eventissime</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav">
+    <button type="button" class="btn btn-dark btn-floating" data-mdb-ripple-color="light">
+    <%= link_to "Accueil", root_path, :class =>"nav-link" %>
+    </button>
+    <button type="button" class="btn btn-dark btn-floating" data-mdb-ripple-color="light">
+    <%= link_to "Se connecter", new_user_session_path, :class =>"nav-link" %>
+    </button>
+    <button type="button" class="btn btn-dark btn-floating" data-mdb-ripple-color="light">
+    <%= link_to "S'inscrire", new_user_registration_path, :class =>"nav-link" %>
+    </button>
+    <button type="button" class="btn btn-dark btn-floating" data-mdb-ripple-color="light">
+    <%= link_to "Se déconnecter", destroy_user_session_path, :class =>"nav-link" %>
+    </button>
+    </div>
+  </ul>
+</div>
