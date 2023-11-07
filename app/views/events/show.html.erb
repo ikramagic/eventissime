@@ -1,10 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-5">
+  <p class="text-success"><%= notice %></p>
 
-<%= render @event %>
+  <%= render @event %>
 
-<div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %>
-
-  <%= button_to "Destroy this event", @event, method: :delete %>
+  <% if user_signed_in? %>
+  <div class="mt-4">
+    <%= link_to "Edit this event", edit_event_path(@event), class: "btn btn-primary" %>
+    <%= link_to "Back to events", events_path, class: "btn btn-secondary" %>
+    <%= button_to "Destroy this event", @event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  </div>
+  <% end %>
 </div>

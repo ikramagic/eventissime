@@ -8,9 +8,9 @@
 
 require 'faker'
 
-Attendance.destroy_all
-Event.destroy_all
-User.destroy_all
+#Attendance.destroy_all
+#Event.destroy_all
+#User.destroy_all
 
 Faker::Config.locale = 'fr'
 
@@ -35,7 +35,7 @@ all_events = []
     all_users << new_user
 end
 
-3.times do 
+10.times do 
         new_event = Event.create(
         start_date: Faker::Date.forward(days: 365),
         duration: event_durations.sample,

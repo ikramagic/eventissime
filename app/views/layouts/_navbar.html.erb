@@ -1,24 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Eventissime</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<%= link_to "Eventissime", root_path, class: "navbar-brand" %>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <button class="btn btn-danger btn-floating btn-rounded">
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </button>
-        </li>
-        <li class="nav-item">
-          Voici ton email : <%= current_user.email %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-floating btn-rounded" %>
         </li>
         <li class="nav-item">
           <button type="button" class="btn btn-dark btn-floating" data-mdb-ripple-color="light">
             <%= link_to "Edit email / password", edit_user_registration_path, class: "nav-link" %>
           </button>
         </li>
+        <li class="nav-item">
+        <button type="button" class="btn btn-dark btn-floating" data-mdb-ripple-color="light">
+          <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
+        </button>
+      </li>
+      <li class="nav-item">        
+      <%= link_to "New event", new_event_path, class: "btn btn-success" %>
+      </li>
       <% else %>
         <li class="nav-item">
           <button type="button" class="btn btn-dark btn-floating" data-mdb-ripple-color="light">

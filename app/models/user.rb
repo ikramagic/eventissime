@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
     after_create :welcome_send
     
-    has_many :attendances
-    has_many :events, through: :attendances
+    has_many :attendances, dependent: :destroy
+    has_many :events, through: :attendances, dependent: :destroy
+    
     #validates :first_name, presence: true
     #validates :last_name, presence: true
     #validates :description, presence: true
