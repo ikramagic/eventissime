@@ -3,6 +3,8 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.default_url_options = { :host => 'eventissime-4f42df2520e7.herokuapp.com/' }
+
   ActionMailer::Base.smtp_settings = {
   :user_name => ENV['MAILJET_LOGIN'],
   :password => ENV['MAILJET_PWD'],
