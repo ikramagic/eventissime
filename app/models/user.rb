@@ -7,10 +7,7 @@ class User < ApplicationRecord
     
     has_many :attendances, dependent: :destroy
     has_many :events, through: :attendances, dependent: :destroy
-    
-    #validates :first_name, presence: true
-    #validates :last_name, presence: true
-    #validates :description, presence: true
+    has_many :created_events, class_name: 'Event', foreign_key: 'admin_id'
 
     def welcome_send
         UserMailer.welcome_email(self).deliver_now

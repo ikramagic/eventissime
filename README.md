@@ -1,5 +1,16 @@
 # README
 
+Reminders :
+---▷ events > show.html.erb may need a fix for routing towards correct attendance method (button appears and redirects towards stripe cu id input field page)
+---▷ Stripe is not implemented yet 
+---▷ Cannot join an event even if button visible when relevant
+
+Done : 
+---▷ Event/User models have been edited, users can now be admin of their created events and only them will have admin powers other the events
+
+
+_______________________________________
+
 Bonjour.
 
 Ce README.md existe.

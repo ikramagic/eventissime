@@ -22,6 +22,7 @@ class AttendancesController < ApplicationController
   # POST /attendances or /attendances.json
   def create
     @attendance = Attendance.new(attendance_params)
+    @attendance.user = current_user
 
     respond_to do |format|
       if @attendance.save
@@ -65,6 +66,6 @@ class AttendancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.require(:attendance).permit(:stripe_customer_id)
+      params.require(:attendance).permit(:stripe_customer_id, :user_id)
     end
 end
