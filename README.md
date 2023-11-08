@@ -20,4 +20,4 @@ Finalement, après de nombreuses heures passées à coder et à corriger des err
 
 Et c'est ainsi que Rubysterie, avec persévérance, de l'humour et un peu d'aide d'une chouette nocturne, réalisa son rêve de devenir une développeuse web. Elle comprit que, même si elle faisait des erreurs de syntaxe en chemin, c'était ces erreurs qui la guidaient vers la magie du développement web. Et ainsi se termina notre conte, avec la valeureuse moussaillonne Rubysterie, son ordinateur, la chouette, et une forêt magique de licornes en ligne pour le monde entier à explorer.
 
-LE GRAAL : https://eventissime-4f42df2520e7.herokuapp.com/
+LE GRAAL : (supprimé)
