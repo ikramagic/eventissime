@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- manifest.js -->
+    <%= stylesheet_link_tag 'bootstrap', media: 'all' %>
 
-    <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css', media: 'all' %>
+    <%= stylesheet_link_tag 'modern-business', media: 'all' %>
+
+    <%= javascript_include_tag 'jquery.js', media: 'all'%>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
   </head>
 
   <%= render 'layouts/navbar' %>
