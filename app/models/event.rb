@@ -2,8 +2,9 @@ class Event < ApplicationRecord
     has_many :attendances, dependent: :destroy
     has_many :users, through: :attendances, dependent: :destroy
     belongs_to :admin, class_name: 'User', foreign_key: 'admin_id'
-
+    has_one_attached :illustration
     
+    validate :illustration_presence
     validates :start_date, presence: true
     validate :start_date_cannot_be_in_the_past
     validates :duration, presence: true, numericality: { greater_than: 0 }
@@ -23,5 +24,9 @@ class Event < ApplicationRecord
         if start_date.present? && start_date < DateTime.now
             errors.add(:start_date, "Sorry, the event can't be in the past")
         end
+    end
+
+    def illustration_presence
+        errors.add(:illustration, "must be added") unless illustration.attached?
     end
 end

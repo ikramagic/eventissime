@@ -5,5 +5,4 @@ class AvatarsController < ApplicationController
         current_user.avatar.attach(params[:avatar])
         redirect_to(user_path(current_user))
     end
-
 end

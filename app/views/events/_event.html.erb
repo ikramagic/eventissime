@@ -5,6 +5,15 @@
   </p>
 
   <p>
+  <strong>Illustration :</strong>
+  <% if event.illustration.attached? %>
+    <%= image_tag event.illustration %>
+  <% else %>
+    <em>Aucune illustration disponible</em>
+  <% end %>
+</p>
+
+  <p>
     <strong>Duration:</strong>
     <%= event.duration %>
   </p>

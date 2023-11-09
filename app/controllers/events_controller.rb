@@ -26,6 +26,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
+        attach_illustration if params[:event][:illustration].present?
         format.html { redirect_to event_url(@event), notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else
@@ -66,6 +67,10 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location)
+      params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location, :illustration)
+    end
+
+    def attach_illustration
+      @event.illustration.attach(params[:event][:illustration])
     end
 end
