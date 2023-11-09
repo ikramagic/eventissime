@@ -8,6 +8,8 @@ gem "rails", "~> 7.0.8"
 
 gem "dotenv-rails"
 
+gem 'stripe'
+
 gem "devise"
 
 gem "faker"
