@@ -25,6 +25,26 @@
   <% end %>
 </div>
 
+<div class="card">
+  <div class="card-body">
+    <h3>Événements auxquels tu t'es inscrit</h3>
+    <% if current_user.events.any? %>
+      <% current_user.events.each do |event| %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.title %></h5>
+            <p class="card-text"><strong>Date et heure :</strong> <%= event.start_date.strftime("%d-%m-%Y %H:%M") %></p>
+            <p class="card-text"><strong>Lieu :</strong> <%= event.location %></p>
+            <p class="card-text"><strong>Durée :</strong> <%= event.duration %> minutes </p>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>Vous n'êtes pas encore inscrit à un événement.</p>
+    <% end %>
+  </div>
+</div>
+<br>
   <%= link_to "Back to homepage", root_path, class: "btn btn-primary" %>
     </div>
   </div>

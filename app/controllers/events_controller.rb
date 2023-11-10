@@ -1,5 +1,11 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[ show edit update destroy ]
+  before_action :set_event, only: %i[ show edit update destroy payment_success]
+
+  require 'stripe'
+
+  Stripe.api_key = Rails.configuration.stripe[:secret_key]
+
+  YOUR_DOMAIN = 'https://eventissime-4f42df2520e7.herokuapp.com/'
 
   # GET /events or /events.json
   def index
@@ -8,6 +14,24 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
+    @event = Event.find(params[:id])
+    @session = Stripe::Checkout::Session.create({
+      payment_method_types: ['card'],
+      line_items: [{
+        price_data: {
+          currency: 'eur',
+          product_data: {
+            name: @event.title,
+            description: @event.description,
+          },
+          unit_amount: @event.price * 100, 
+        },
+        quantity: 1,
+      }],
+      mode: 'payment',
+      success_url: payment_success_event_url(@event),
+      cancel_url: event_url(@event),
+    })
   end
 
   # GET /events/new
@@ -56,6 +80,20 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def payment_success
+    if current_user
+      @attendance = Attendance.new(user: current_user, event: @event, stripe_customer_id: params[:customer])
+      if @attendance.save
+        #UserMailer.confirmation_email(@attendance).deliver_now
+        redirect_to event_path(@event), notice: 'Payment successful!'
+      else
+        redirect_to event_path(@event), alert: 'Failed to create attendance record.'
+      end
+    else
+      redirect_to event_path(@event), alert: 'User not authenticated.'
     end
   end
 

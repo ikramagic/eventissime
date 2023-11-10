@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Order Confirmation</h1>
+    <p>Dear <%= @user.email %>,</p>
+    <p>Thank you for your order for the event "<%= @event.title %>".</p>
+    <p>Date and time: <%= @event.start_date.strftime('%d-%m-%Y %H:%M') %></p>
+    <p>Location: <%= @event.location %></p>
+    <p>Duration: <%= @event.duration %> minutes</p>
+    <p>We appreciate your participation. Enjoy the event!</p>
+  </body>
+</html>

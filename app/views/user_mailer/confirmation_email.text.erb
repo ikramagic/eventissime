@@ -1,0 +1,11 @@
+Order Confirmation
+
+Dear <%= @user.email %>,
+
+Thank you for your order for the event "<%= @event.title %>".
+Date and time: <%= @event.start_date.strftime('%d-%m-%Y %H:%M') %>
+Location: <%= @event.location %>
+Duration: <%= @event.duration %> minutes
+
+We appreciate your participation. 
+Enjoy the event!
