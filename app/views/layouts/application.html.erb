@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css', media: 'all' %>
-
     <%= stylesheet_link_tag 'bootstrap', media: 'all' %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
@@ -19,8 +16,8 @@
     <%= yield %>
   </div>
   </body>
-  <br>
-  <footer class="footer text-center">
-    <p> © Eventissime, fondé en l'an de grâce 2023, où la moussaillone anonyme, dite « la Gnôme » affrontait aux frontières du royaume son cousin le Duc de Beugs.</p>
+  <hr>
+  <footer class="footer text-center bg-primary text-light p-1">
+  <p>© Eventissime, fondé en l'an de grâce 2023, où les moussaillons affrontaient aux frontières du royaume leur cousin le Duc de Beugs.</p>
 </footer>
 </html>

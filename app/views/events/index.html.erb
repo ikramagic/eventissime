@@ -8,8 +8,8 @@
   <% @events.each do |event| %>
     <div class="col-md-2">
       <div class="card mb-2">
-        <img src="https://m.media-amazon.com/images/M/MV5BMzAzMmNkMWYtM2QyMy00MWM4LWFhZjctMTVkNWVmN2M4NWY5XkEyXkFqcGdeQXVyMTQzMjU1NjE@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="Event Image">
-        <div class="card-body">
+      <%= image_tag event.illustration, class: "card-img-top", alt: "Event Image" %>
+      <div class="card-body">
           <h5 class="card-title"><%= event.title %></h5>
           <p class="card-text"><%= event.description %></p>
           <%= link_to "Show this event", event, class: "btn btn-primary" %>
