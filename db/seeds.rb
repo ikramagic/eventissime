@@ -8,9 +8,9 @@
 
 require 'faker'
 
-#Attendance.destroy_all
-#Event.destroy_all
-#User.destroy_all
+Attendance.destroy_all
+Event.destroy_all
+User.destroy_all
 
 Faker::Config.locale = 'fr'
 
@@ -30,6 +30,7 @@ all_events = []
         first_name: first_name,
         last_name: last_name,
         description: Faker::Hacker.say_something_smart,
+        password: Faker::Lorem.word,
         email: "#{first_name.downcase.gsub(/[àâçéèêëîïôûüÿ]/, 'x')}.#{last_name.downcase.gsub(/[àâçéèêëîôûü]/, 'x')}@yopmail.com"
         )
     all_users << new_user
@@ -45,11 +46,4 @@ end
         location: Faker::Address.city
     )
     all_events << new_event
-end
-
-3.times do 
-    Attendance.create(
-        user: all_users.sample,
-        event: all_events.sample
-    )
 end

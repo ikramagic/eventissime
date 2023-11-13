@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :attendances
+      resources :events
+      resources :users
+
+      root to: "attendances#index"
+    end
+
   root 'events#index'
+  
   devise_for :users
 
   resources :attendances
