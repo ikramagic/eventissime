@@ -1,0 +1,187 @@
+<h1>StaticPages#index</h1>
+<p>Find me in app/views/static_pages/index.html.erb</p>
+
+<h1 class="text-center">Navbar</h1>
+
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+  <%= link_to "Eventissime", root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto nav-fill">
+      <% if user_signed_in? %>
+      <li class="nav-item">
+      <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
+        <%= link_to "Edit email / password", edit_user_registration_path, class: "nav-link" %>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
+        <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
+      </button>
+    </li>
+    <li class="nav-item">        
+    <%= link_to "New event", new_event_path, class: "btn btn-success nav-link" %>
+  </li>
+        <li class="nav-item">
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-floating nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
+            <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
+            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+          </button>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+<hr>
+
+<h1 class="text-center">Footer</h1>
+
+<footer class="footer text-center bg-primary text-light p-1">
+<p>© Eventissime, fondé en 2023, où les moussaillons affrontaient aux frontières du royaume leur cousin le Duc de Beugs.</p>
+</footer>
+
+<hr>
+
+<h1 class="text-center">Forms</h1>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center">Log in</h2>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autofocus="true" autocomplete="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" autocomplete="current-password" class="form-control">
+            </div>
+
+            <div class="form-group form-check">
+              <input type="checkbox" id="remember_me" name="remember_me" class="form-check-input">
+              <label for="remember_me" class="form-check-label">Remember me</label>
+            </div>
+
+            <div class="text-center">
+              <input type="submit" value="Log in" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="text-center">Sign up</h2>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autofocus="true" autocomplete="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" autocomplete="new-password" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="password_confirmation">Confirm Password</label>
+              <input type="password" id="password_confirmation" name="password_confirmation" autocomplete="new-password" class="form-control">
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Sign up</button>
+            </div>
+          </form>
+          <br>
+          <p>If you already have an account, please log in using the link here below.</p>
+          <a href="/login">Log in</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header text-center">
+            <h2>Forgot your password?</h2>
+          </div>
+          <div class="card-body">
+            <form action="#" method="post">
+              <!-- Erreur Messages -->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autofocus="true" autocomplete="email" class="form-control">
+              </div>
+  
+              <div class="text-center">
+                <input type="submit" value="Send me reset password instructions" class="btn btn-primary">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header text-center">
+          <h2>Change your password</h2>
+        </div>
+        <div class="card-body">
+          <form action="#" method="put">
+            <input type="hidden" name="reset_password_token" value="your_reset_token_here">
+
+            <div class="form-group">
+              <label for="password">New password</label><br>
+              <small>(Minimum <%= @minimum_password_length %> characters)</small><br>
+              <input type="password" id="password" name="password" autocomplete="new-password" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="password_confirmation">Confirm new password</label><br>
+              <input type="password" id="password_confirmation" name="password_confirmation" autocomplete="new-password" class="form-control">
+            </div>
+
+            <div class="text-center">
+              <input type="submit" value="Change my password" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<hr>
+
+</body>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'static_pages/index'
   namespace :admin do
       resources :attendances
       resources :events
