@@ -1,14 +1,10 @@
 # README
 
-Reminders :
----▷ events > show.html.erb may need a fix for routing towards correct attendance method (button appears and redirects towards stripe cu id input field page)
----▷ Stripe is not implemented yet 
----▷ Cannot join an event even if button visible when relevant
+# Instructions pour visualiser le Kit UI :
 
-Done : 
----▷ Event/User models have been edited, users can now be admin of their created events and only them will have admin powers other the events
+La page qui présente le Kit UI se trouvera en lançant le serveur local à l'adresse : http://localhost:3000/static_pages/
 
-
+Les pages qui affichent les différentes molécules et organismes seront dans la site (page d'acceuil, formulaire d'enregistrement, etc...).
 _______________________________________
 
 Bonjour.

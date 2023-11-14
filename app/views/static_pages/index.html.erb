@@ -1,48 +1,52 @@
-<h1>StaticPages#index</h1>
-<p>Find me in app/views/static_pages/index.html.erb</p>
+<h1>KIT UI</h1>
+
+<hr>
 
 <h1 class="text-center">Navbar</h1>
 
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
-  <%= link_to "Eventissime", root_path, class: "navbar-brand" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto nav-fill">
-      <% if user_signed_in? %>
-      <li class="nav-item">
-      <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
-        <%= link_to "Edit email / password", edit_user_registration_path, class: "nav-link" %>
-      </button>
-    </li>
-    <li class="nav-item">
-      <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
-        <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
-      </button>
-    </li>
-    <li class="nav-item">        
-    <%= link_to "New event", new_event_path, class: "btn btn-success nav-link" %>
-  </li>
-        <li class="nav-item">
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-floating nav-link" %>
-        </li>
-      <% else %>
+    <span class="navbar-brand">Eventissime</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto nav-fill">
         <li class="nav-item">
           <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
-            <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+            <span class="nav-link">Edit email / password</span>
           </button>
         </li>
         <li class="nav-item">
           <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+            <span class="nav-link">Profile</span>
           </button>
         </li>
-      <% end %>
-    </ul>
+        <li class="nav-item">   
+        <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">     
+          <span class="btn btn-success nav-link">New event</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
+            <span class="btn btn-danger nav-link">Sign out</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
+            <span class="nav-link">Sign in</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
+            <span class="nav-link">Sign up</span>
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
+
 
 <hr>
 
@@ -187,10 +191,21 @@
 <h1 class="text-center">Big Banner</h1>
 
 <div class="jumbotron position-relative" style="background-image: url('<%= asset_path('party_girls.jpeg') %>'); background-size: cover; width: 100%; height: 50vh; background-position: center; position: relative; overflow: hidden; text-align: center;">
-  <h1 class="text-center" style="padding: 25px; position: relative; z-index: 1; color: #fff;">Events</h1>
-  <p class="text-center">Let the giggles and the sparkle-filled festivities unfold, as we honor the joy of celebrating girls, each a delightful masterpiece of dreams, resilience, and the sweet essence of everything wonderfully, unapologetically girly!</p>
+  <h1 class="text-center" style="padding: 75px; position: relative; z-index: 1; color: #fff;">Events</h1>
+  <p class="text-center" style="position: relative; z-index: 1; color: #fff;">Let the giggles and the sparkle-filled festivities unfold, as we honor the joy of celebrating girls, each a delightful masterpiece of dreams, resilience, and the sweet essence of everything wonderfully, unapologetically girly!</p>
   <button class="btn btn-lg btn-primary" style="margin: 10px auto; position: relative; z-index: 1; color: #fff; display: block;" type="button">Join our community and let the celebration start!</button>
   <div class="gradient-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, var(--bs-primary), var(--bs-secondary)); opacity: 0.8; z-index: 0;"></div>
 </div>
+
+<hr> 
+
+<h1 class="text-center">Small Banner</h1>
+
+<div class="jumbotron position-relative" style="background-image: url('<%= asset_path('party_girls.jpeg') %>'); background-size: cover; width: 100%; height: 25vh; background-position: center; position: relative; overflow: hidden; text-align: center;">
+  <h1 class="text-center" style="padding: 75px; position: relative; z-index: 1; color: #fff;">The event of the century</h1>
+  <div class="gradient-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, var(--bs-primary), var(--bs-secondary)); opacity: 0.8; z-index: 0;"></div>
+</div>
+
+<hr> 
 
 </body>
