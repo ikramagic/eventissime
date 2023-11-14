@@ -22,7 +22,7 @@ event_descriptions = ["Une soirée hilarante avec des boucles infinies de code. 
 all_users = []
 all_events = []
 
-3.times do 
+30.times do 
     first_name = Faker::Name.first_name
     last_name = Faker::Name.last_name
 
@@ -30,12 +30,13 @@ all_events = []
         first_name: first_name,
         last_name: last_name,
         description: Faker::Hacker.say_something_smart,
-        password: Faker::Lorem.word,
+        password: "lolilol",
         email: "#{first_name.downcase.gsub(/[àâçéèêëîïôûüÿ]/, 'x')}.#{last_name.downcase.gsub(/[àâçéèêëîôûü]/, 'x')}@yopmail.com"
         )
     all_users << new_user
 end
 
+=begin
 10.times do 
         new_event = Event.create(
         start_date: Faker::Date.forward(days: 365),
@@ -47,3 +48,4 @@ end
     )
     all_events << new_event
 end
+=end
