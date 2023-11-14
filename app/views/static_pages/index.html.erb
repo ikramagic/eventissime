@@ -1,10 +1,15 @@
-<h1>KIT UI</h1>
+<br>
+<div class="text-center">
+  <h1 class="mb-4">KIT UI de misère (la page Bootswatch, en pire)</h1>
+  <%= image_tag('flamingo_guy.png', alt: 'Logo', class: 'mx-auto') %>
+</div>
 
 <hr>
 
 <h1 class="text-center">Navbar</h1>
 
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+<a class="navbar-brand"><%= image_tag('flamingo_guy.png', alt: 'Logo', style: 'max-width: 100px; max-height: 50px;')%></a>
   <div class="container-fluid">
     <span class="navbar-brand">Eventissime</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -234,4 +239,25 @@
     </div>
 </div>
 
+<hr>
+
+<h1 class="text-center">Alertes</h1>
+
+<div class="alert alert-dismissible alert-warning">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <h4 class="alert-heading">Attention!</h4>
+  <p class="mb-0">Il y a un problème.</p>
+</div>
+
+<div class="alert alert-dismissible alert-danger">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  <h4 class="alert-heading">Oh non!</h4>
+  <p class="mb-0">Vérifie les champs du formulaire!</p>
+</div>
+
+<div class="alert alert-dismissible alert-success">
+<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+<h4 class="alert-heading">Tout est bon.</h4>
+<p class="mb-0">Bien enregistré.</p>
+</div>
 </body>

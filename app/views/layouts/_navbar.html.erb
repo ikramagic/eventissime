@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+<a class="navbar-brand"><%= image_tag('flamingo_guy.png', alt: 'Logo', style: 'max-width: 100px; max-height: 50px;')%></a>
   <div class="container-fluid">
   <%= link_to "Eventissime", root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,12 +18,16 @@
         <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
       </button>
     </li>
-    <li class="nav-item">        
+    <li class="nav-item">
+    <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">          
     <%= link_to "New event", new_event_path, class: "btn btn-success nav-link" %>
+    </button>
   </li>
         <li class="nav-item">
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-floating nav-link" %>
-        </li>
+        <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger nav-link" %>
+          </button>
+          </li>
       <% else %>
         <li class="nav-item">
           <button type="button" class="btn btn-floating" data-mdb-ripple-color="light">
@@ -34,6 +39,12 @@
             <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
           </button>
         </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-floating btn-outline-dark" data-mdb-ripple-color="light">
+            <%= link_to "Kit UI", static_pages_path, class: "nav-link" %>
+          </button>
+        </li>
+
       <% end %>
     </ul>
   </div>
