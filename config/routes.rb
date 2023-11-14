@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'static_pages/index'
+
   namespace :admin do
       resources :attendances
       resources :events
@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :attendances
+
+  resources :static_pages
+
 
   resources :events do
     resources :illustration, only: [:create]
