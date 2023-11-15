@@ -6,15 +6,14 @@
       <p class="text-muted">Aucune illustration disponible</p>
     </div>
   <% end %>
-</div>
 
   <div class="card-body">
     <h3 class="card-header"><%= event.title %></h3>
     <h5 class="card-title"><strong>Start date:</strong> <%= event.start_date %></h5>
     <p class="card-text"><strong>Duration:</strong> <%= event.duration %></p>
     <p class="card-text"><strong>Description:</strong> <%= event.description %></p>
-    <%= image_tag('coin.png', alt: 'Logo', style: 'max-width: 100px; max-height: 50px;')%>
-    <p class="card-text"><strong>Price: </strong><%= event.price %>.00 €</p>
+    <%= image_tag('coin.png', alt: 'Logo', style: 'max-width: 100px; max-height: 50px;') %>
+    <p class="card-text"><strong>Price:</strong> <%= event.price %>.00 €</p>
     <p class="card-text"><strong>Location:</strong> <%= event.location %></p>
   </div>
 </div>
