@@ -1,7 +1,12 @@
 <div class="card mb-3">
   <% if event.illustration.attached? %>
     <%= image_tag event.illustration, class: "card-img-top", alt: "Event Image" %>
+  <% else %>
+    <div class="card-img-top text-center">
+      <p class="text-muted">Aucune illustration disponible</p>
+    </div>
   <% end %>
+</div>
 
   <div class="card-body">
     <h3 class="card-header"><%= event.title %></h3>
