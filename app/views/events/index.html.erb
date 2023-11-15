@@ -9,7 +9,13 @@
   <% @events.each do |event| %>
     <div class="col-md-2">
       <div class="card mb-2">
-        <%= image_tag event.illustration, class: "card-img-top", alt: "Event Image" %>
+        <% if event.illustration.attached? %>
+          <%= image_tag event.illustration, class: "card-img-top", alt: "Event Image" %>
+        <% else %>
+          <div class="card-img-top text-center">
+            <p class="text-muted">Aucune illustration disponible</p>
+          </div>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= event.title %></h5>
           <p class="card-text"><%= event.description %></p>
